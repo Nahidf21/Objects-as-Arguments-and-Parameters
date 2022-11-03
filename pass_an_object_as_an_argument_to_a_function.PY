@@ -1,29 +1,21 @@
 import math
 
 class Point:
-    """ Point class for representing and manipulating x,y coordinates. """
+    
+    def __init__(self,initx,inity) :
+        self.x=initx
+        self.y=inity
 
-    def __init__(self, initX, initY):
-
-        self.x = initX
-        self.y = initY
-
-    def getX(self):
+    def getx(self):
         return self.x
-
-    def getY(self):
+    def gety(self):
         return self.y
+    
+    def dic_from_origin(self):
+        
+        x=math.sqrt(self.x**2+self.y**2)
+        return x
 
-    def distanceFromOrigin(self):
-        return ((self.x ** 2) + (self.y ** 2)) ** 0.5
+point1= Point(2,3)
 
-def distance(point1, point2):
-    xdiff = point2.getX()-point1.getX()
-    ydiff = point2.getY()-point1.getY()
-
-    dist = math.sqrt(xdiff**2 + ydiff**2)
-    return dist
-
-p = Point(4,3)
-q = Point(0,0)
-print(distance(p,q))
+print(point1.dic_from_origin())
