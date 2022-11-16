@@ -25,6 +25,9 @@ class point:
     def __add__(self,Other):
         return (self.getx()+Other.x, self.gety()+Other.y)
 
+    def __sub__(self,Other):
+        return (self.getx()-Other.x, self.gety()+Other.y)
+
 
 
 p=point(3,4)
@@ -33,3 +36,4 @@ q=point(2,4)
 print(p.distance(q))
 print(p)
 print(p+q)
+print(p-q)
