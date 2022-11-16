@@ -22,9 +22,14 @@ class point:
     def __str__(self):
         return 'Our points are point A ({},{}) '.format(self.x, self.y)
 
+    def __add__(self,Other):
+        return (self.getx()+Other.x, self.gety()+Other.y)
+
+
 
 p=point(3,4)
-q=point(0,0)
+q=point(2,4)
 
 print(p.distance(q))
 print(p)
+print(p+q)
