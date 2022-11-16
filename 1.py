@@ -19,9 +19,12 @@ class point:
         distance= math.sqrt(xdistance**2+ydistance**2)
 
         return distance
+    def __str__(self):
+        return 'Our points are point A ({},{}) '.format(self.x, self.y)
 
 
 p=point(3,4)
 q=point(0,0)
 
 print(p.distance(q))
+print(p)
