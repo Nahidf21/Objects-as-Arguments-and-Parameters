@@ -14,6 +14,6 @@ lists=[
     Fruets("Banana", 5)
     ]
 
-for f in sorted(lists, key=Fruets.sort_by):
+for f in sorted(lists, key= lambda y:y.sort_by()):
 
     print(f.name)
