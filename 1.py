@@ -19,21 +19,28 @@ class point:
         distance= math.sqrt(xdistance**2+ydistance**2)
 
         return distance
-    def __str__(self):
-        return 'Our points are point A ({},{}) '.format(self.x, self.y)
+    
 
     def __add__(self,Other):
         return (self.getx()+Other.x, self.gety()+Other.y)
 
     def __sub__(self,Other):
         return (self.getx()-Other.x, self.gety()+Other.y)
+    
+    def halfway(self,terget):
+        midx=(self.x+terget.x)/2
+        midy=(self.y+terget.y)/2
+        return point(midx,midy)
 
+    def __str__(self):
+        return '(x={},y={}) '.format(self.x, self.y)
 
 
 p=point(3,4)
 q=point(2,4)
 
-print(p.distance(q))
-print(p)
-print(p+q)
-print(p-q)
+mid= p.halfway(q)
+
+print(mid)
+print(mid.getx())
+print(mid.gety())
